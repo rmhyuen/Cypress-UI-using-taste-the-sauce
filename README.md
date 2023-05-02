@@ -4,12 +4,12 @@ Hello, the purpose of this project is to demonstrate Cypress e2e testing using t
 
 To start using the app, run:
 
-npm install
-npm run start-18
+  npm install
+  npm run start-18
 
 To start cypress, run:
 
-npx cypress open
+  npx cypress open
 
 # taste-the-sauce
 
