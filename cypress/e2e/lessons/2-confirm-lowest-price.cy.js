@@ -2,7 +2,7 @@ import "cypress-map"
 
 describe('template spec', () => {
   context('', () => {
-    it('should login', () => {
+    it('should login and confirm the lowest price', () => {
       cy.visit('/')
       cy.get("[data-test='username']")
         .should('be.visible')
