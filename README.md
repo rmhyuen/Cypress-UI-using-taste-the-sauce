@@ -1,3 +1,16 @@
+# Introduction
+
+Hello, the purpose of this project is to demonstrate Cypress e2e testing using this sample web application.
+
+To start using the app, run:
+
+npm install
+npm run start-18
+
+To start cypress, run:
+
+npx cypress open
+
 # taste-the-sauce
 
 > Cypress testing tutorial using the SauceLabs sample web app
