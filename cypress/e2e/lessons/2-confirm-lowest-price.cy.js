@@ -1,6 +1,6 @@
 import "cypress-map"
 
-describe('template spec', () => {
+describe('sorting', () => {
   context('', () => {
     it('should login and confirm the lowest price', () => {
       cy.visit('/')

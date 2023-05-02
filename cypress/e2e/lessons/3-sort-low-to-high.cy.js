@@ -1,8 +1,8 @@
 import "cypress-map"
 
-describe('template spec', () => {
+describe('sorting', () => {
   context('', () => {
-    it('should login', () => {
+    it('should login and verify sorted low to high price order', () => {
       cy.visit('/')
       cy.get("[data-test='username']")
         .should('be.visible')

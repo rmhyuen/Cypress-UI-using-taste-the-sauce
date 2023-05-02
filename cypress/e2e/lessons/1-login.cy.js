@@ -1,4 +1,4 @@
-describe('template spec', () => {
+describe('login', () => {
   context('', () => {
     it('should login', () => {
       cy.visit('/')
