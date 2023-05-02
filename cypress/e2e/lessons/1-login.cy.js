@@ -1,0 +1,23 @@
+describe('template spec', () => {
+  context('', () => {
+    it('should login', () => {
+      cy.visit('/')
+      cy.get("[data-test='username']")
+        .should('be.visible')
+        .and('have.attr', 'placeholder', 'Username')
+        .type('standard_user')
+      cy.get("[data-test='password']")
+        .should('be.visible')
+        .and('have.attr', 'placeholder', 'Password')
+        .type('secret_sauce')
+      cy.get("[data-test='login-button']")
+        .should('be.visible')
+        .click()
+      cy.location('pathname')
+        .should('equal', '/inventory.html')
+      cy.get('.inventory_item')
+        .should("be.visible")
+        .should('have.length.greaterThan', 3)
+    })
+  })
+})
