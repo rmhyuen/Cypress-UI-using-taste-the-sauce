@@ -28,7 +28,6 @@ describe('login', () => {
         LoginPage.getUserName().should("have.class", "error")
         LoginPage.getPassword().should("have.class", "error")
         LoginPage.getError().should("be.visible").and("include.text", "Epic sadface: Sorry, this user has been locked out.")
-
         cy.get(".error-button").should("be.visible").click()
 
         LoginPage.noErrors()
