@@ -1,6 +1,6 @@
 # Introduction
 
-Hello, the purpose of this project is to demonstrate Cypress e2e testing using this sample web application.
+Hello, the purpose of this project is to demonstrate Cypress testing using this sample web application.
 
 To start using the app, run:
 
