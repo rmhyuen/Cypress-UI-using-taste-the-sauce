@@ -9,23 +9,23 @@ describe('item', () => {
   beforeEach(() => {
     //login
     cy.visit('/')
-      cy.get("[data-test='username']")
-        .should('be.visible')
-        .and('have.attr', 'placeholder', 'Username')
-        .type('standard_user')
-      cy.get("[data-test='password']")
-        .should('be.visible')
-        .and('have.attr', 'placeholder', 'Password')
-        .type('secret_sauce')
-      cy.get("[data-test='login-button']")
-        .should('be.visible')
-        .click()
-      cy.location('pathname')
-        .should('equal', '/inventory.html')
+    cy.get("[data-test='username']")
+      .should('be.visible')
+      .and('have.attr', 'placeholder', 'Username')
+      .type('standard_user')
+    cy.get("[data-test='password']")
+      .should('be.visible')
+      .and('have.attr', 'placeholder', 'Password')
+      .type('secret_sauce')
+    cy.get("[data-test='login-button']")
+      .should('be.visible')
+      .click()
+    cy.location('pathname')
+      .should('equal', '/inventory.html')
   })
 
   context('item details', () => {
-    it('should verify item text details', () => {
+    it('should verify item details', () => {
       // confirm there is an item in the inventory
       // with:
       //   name: "Sauce Labs Bike Light"
