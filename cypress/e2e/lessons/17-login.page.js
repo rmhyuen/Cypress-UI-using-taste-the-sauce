@@ -41,7 +41,11 @@ export const LoginPage = {
         LoginPage.getErrorButton().should("be.visible")
         LoginPage.getError().should('have.text', text).and("be.visible")
     },
-
+    /**
+     * 
+     * @param {*} username 
+     * @param {*} password 
+     */
     login(username, password){
         cy.session(`user ${username} session`, () => {
             cy.visit("/")
