@@ -5,8 +5,6 @@
 // https://on.cypress.io/intelligent-code-completion
 /// <reference types="cypress" />
 
-// cypress/e2e/product.cy.js
-
 import { LoginPage } from './17-login.page'
 
 describe('Product', () => {
