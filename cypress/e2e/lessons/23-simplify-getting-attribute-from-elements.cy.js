@@ -1,0 +1,43 @@
+// enables typescript checking in javascript files
+// @ts-check
+
+// enables intelligent code completion for Cypress commands
+// https://on.cypress.io/intelligent-code-completion
+/// <reference types="cypress" />
+
+import { LoginPage } from './17-login.page'
+// https://github.com/bahmutov/cypress-map
+import 'cypress-map'
+
+describe('Products', () => {
+  // create a small type on the fly using jsdoc comment
+  // just to help type check help us
+  /** @type {{username: string, password: string}} */
+  const user = Cypress.env('users').standard
+  // we can even check if the user object is valid
+  if (!user) {
+    throw new Error('Missing the standard user')
+  }
+
+  // before each test, quickly login the user
+  // or restore the previous user session
+  beforeEach(() => {
+    LoginPage.login(user.username, user.password)
+    cy.visit('/inventory.html')
+    cy.location('pathname').should('equal', '/inventory.html')
+  })
+  
+  it('have unique ids', () => {
+    // get all inventory items, there should be more than 3
+    // https://on.cypress.io/get
+    // https://on.cypress.io/should
+    cy.get('.inventory_item')
+      .should('have.length.greaterThan', 3)
+      .mapInvoke('getAttribute', 'data-itemid')
+      .print('ids %o')
+      .should((ids) => {
+        const unique = Cypress._.uniq(ids)
+        expect(unique).to.deep.equal(ids)
+      })
+  })
+})
